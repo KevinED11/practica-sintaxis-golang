@@ -45,6 +45,7 @@ func voidInterface(names ...interface{}) {
 func currentTime() time.Time {
 	return time.Now()
 }
+
 func main() {
 	reverse := ReverseText{text: "kevin"}
 	if result, err := reverse.reverseText(); err != nil {
@@ -103,10 +104,13 @@ func main() {
 
 	fmt.Println(content)
 	n, err := os.Stdout.Write(content)
+
 	if err != nil {
 		log.Fatal(err)
 	}
 	fmt.Println(n)
+	fmt.Printf("The content is %v", string(content))
+	fmt.Println("contentido leido con exito")
 
 	fileName := "text.txt"
 	_, er := os.Stat(fileName)
