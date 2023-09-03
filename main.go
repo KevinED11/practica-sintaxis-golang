@@ -128,6 +128,20 @@ func main() {
 		fmt.Printf("%v file exist\n", fileName2)
 	}
 
+	showNames("kevin", "juan", "keysy", "asael", "kevin")
+
+	newMap := make(map[string]interface{})
+	newMap["name"] = "kevin"
+	newMap["age"] = 22
+	newMap["lastName"] = "dueñas"
+	fmt.Println(newMap)
+	fmt.Println(newMap["name"])
+
+}
+func showNames(names ...string) {
+	for _, name := range names {
+		fmt.Println(name)
+	}
 }
 
 func convertRuneToCharacter(r rune) string {
