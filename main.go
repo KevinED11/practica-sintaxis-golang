@@ -137,6 +137,16 @@ func main() {
 	fmt.Println(newMap)
 	fmt.Println(newMap["name"])
 
+	for key, value := range newMap {
+		fmt.Println(key, value)
+	}
+
+	counter := 1
+	for counter <= 10 {
+		fmt.Println(counter)
+		counter++
+	}
+
 }
 func showNames(names ...string) {
 	for _, name := range names {
