@@ -154,6 +154,31 @@ func main() {
 
 	fmt.Printf("%+v\n", kevinc)
 
+	newArray := [10]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+	newSlice := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+
+	fmt.Println(newArray)
+	fmt.Println(newSlice)
+
+	fmt.Println(time.Now().Weekday())
+	switch day := time.Now().Weekday() - 1; day {
+	case 0:
+		fmt.Println("Lunes")
+	case 1:
+		fmt.Println("Martes")
+	case 2:
+		fmt.Println("Miercoles")
+	case 3:
+		fmt.Println("Jueves")
+	case 4:
+		fmt.Println("Viernes")
+	case 5:
+		fmt.Println("Sabado")
+	case 6:
+		fmt.Println("Domingo")
+	default:
+		fmt.Println("Desconocido")
+	}
 }
 func showNames(names ...string) {
 	for _, name := range names {
