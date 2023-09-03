@@ -192,6 +192,16 @@ func main() {
 		fmt.Println("Edad desconocida")
 
 	}
+
+	for i, letter := range "hola mundo" {
+		fmt.Println(i, string(letter))
+	}
+
+	/*
+		for {
+			fmt.Println("hola")
+		}
+	*/
 }
 func showNames(names ...string) {
 	for _, name := range names {
