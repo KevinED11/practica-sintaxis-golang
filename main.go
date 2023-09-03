@@ -161,6 +161,7 @@ func main() {
 	fmt.Println(newSlice)
 
 	fmt.Println(time.Now().Weekday())
+
 	switch day := time.Now().Weekday() - 1; day {
 	case 0:
 		fmt.Println("Lunes")
@@ -178,6 +179,18 @@ func main() {
 		fmt.Println("Domingo")
 	default:
 		fmt.Println("Desconocido")
+	}
+
+	kevinAge := kevinc.age
+
+	switch {
+	case kevinAge < 18:
+		fmt.Println("Eres menor de edad")
+	case kevinAge >= 18:
+		fmt.Println("Eres mayor de edad")
+	default:
+		fmt.Println("Edad desconocida")
+
 	}
 }
 func showNames(names ...string) {
