@@ -147,6 +147,13 @@ func main() {
 		counter++
 	}
 
+	kevinc := struct {
+		name string
+		age  int
+	}{"kevin", 22}
+
+	fmt.Printf("%+v\n", kevinc)
+
 }
 func showNames(names ...string) {
 	for _, name := range names {
