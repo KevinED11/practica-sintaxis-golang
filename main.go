@@ -193,6 +193,12 @@ func main() {
 
 	}
 
+	fmt.Println("For loop:")
+	num := 5
+	for i := 1; i <= num; i++ {
+		defer fmt.Println(i)
+	}
+
 	for i, letter := range "hola mundo" {
 		fmt.Println(i, string(letter))
 	}
@@ -202,6 +208,21 @@ func main() {
 			fmt.Println("hola")
 		}
 	*/
+
+	f, err := os.Open("text.txt")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer f.Close()
+
+	// Se imprime al final
+	defer fmt.Println("primera")
+	// Se imprime despues de "primera"
+	defer fmt.Println("segunda")
+	fmt.Println("Hola mundo")
+	// Se imprime despues de "Hola mundo"
+	defer fmt.Println("tercera")
+
 }
 func showNames(names ...string) {
 	for _, name := range names {
