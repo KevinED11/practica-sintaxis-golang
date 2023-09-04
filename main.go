@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bytes"
 	"errors"
 	"fmt"
 	"log"
@@ -113,9 +114,15 @@ func main() {
 	fmt.Println("contentido leido con exito")
 
 	fileName := "text.txt"
-	_, er := os.Stat(fileName)
 
+	_, er := os.Stat(fileName)
 	if os.IsNotExist(er) {
+		fmt.Printf("%v file does not exist\n", fileName)
+	} else {
+		fmt.Printf("%v file exist\n", fileName)
+	}
+
+	if _, er := os.Stat(fileName); os.IsNotExist(er) {
 		fmt.Printf("%v file does not exist\n", fileName)
 	} else {
 		fmt.Printf("%v file exist\n", fileName)
@@ -178,7 +185,7 @@ func main() {
 	case 6:
 		fmt.Println("Domingo")
 	default:
-		fmt.Println("Desconocido")
+		fmt.Println("Unknown day")
 	}
 
 	kevinAge := kevinc.age
@@ -214,6 +221,7 @@ func main() {
 		log.Fatal(err)
 	}
 	defer f.Close()
+	fmt.Println(f.Name())
 
 	// Se imprime al final
 	defer fmt.Println("primera")
@@ -223,6 +231,15 @@ func main() {
 	// Se imprime despues de "Hola mundo"
 	defer fmt.Println("tercera")
 
+	// buffer
+	var buf bytes.Buffer
+	buf.Write([]byte("Hola me llamo kevin asael"))
+	buf.WriteByte(32)
+	buf.WriteByte(32)
+	buf.WriteString(" espinoza duéñas")
+
+	fmt.Println(buf)
+	fmt.Println(buf.String())
 }
 func showNames(names ...string) {
 	for _, name := range names {
