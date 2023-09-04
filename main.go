@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"runtime"
 	"time"
 )
 
@@ -240,6 +241,14 @@ func main() {
 
 	fmt.Println(buf)
 	fmt.Println(buf.String())
+
+	goVer := runtime.Version()
+	osVer := runtime.GOOS
+	arch := runtime.GOARCH
+
+	fmt.Println(goVer)
+	fmt.Println(osVer)
+	fmt.Println(arch)
 }
 func showNames(names ...string) {
 	for _, name := range names {
